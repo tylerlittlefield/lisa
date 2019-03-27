@@ -45,10 +45,10 @@ lapply(list(x, y), plot)
 
 <img src="man/figures/README-example2-1.png" width="100%" /><img src="man/figures/README-example2-2.png" width="100%" />
 
-Finally, all palettes have 3 attributes associated with them, *class*,
-*name*, and *work*:
+Finally, all palettes have 3 attributes associated with them:
 
 ``` r
+# shows the class, artist name, and name of work
 attributes(lisa$VincentvanGogh)
 #> $class
 #> [1] "lisa_palette" "character"   
@@ -59,6 +59,7 @@ attributes(lisa$VincentvanGogh)
 #> $work
 #> [1] "The Starry Night"
 
+# there is also a data.frame (excludes class)
 head(work, 5)
 #>                                work            artist
 #> 1     Adobe (Variant): Luminous Day      Josef Albers
