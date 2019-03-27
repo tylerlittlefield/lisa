@@ -57,6 +57,8 @@ Finally, all palettes have 3 attributes associated with them: _class_, _name_, a
 
 ```{r}
 sample(lisa, 3)
+
+head(work, 5)
 ```
 
 ## Acknowledgements

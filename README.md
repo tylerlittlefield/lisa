@@ -76,6 +76,14 @@ sample(lisa, 3)
 #> [1] "BillyApple"
 #> attr(,"work")
 #> [1] "Rainbow"
+
+head(work, 5)
+#>                                work            artist
+#> 1     Adobe (Variant): Luminous Day      Josef Albers
+#> 2 Homage to the Square (La Tehuana)      Josef Albers
+#> 3                      Golden Cloud Gretchen Albrecht
+#> 4                           Rainbow       Billy Apple
+#> 5                              Spar       Per Arnoldi
 ```
 
 ## Acknowledgements

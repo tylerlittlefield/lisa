@@ -11,9 +11,8 @@
 #' A dataset containing the artist name and the name of the work which the palette
 #' comes from. These values are also recorded as \code{attributes} for each palette.
 #'
-#' @format A data frame with 128 rows and 3 variables:
+#' @format A data frame with 128 rows and 2 variables:
 #' \describe{
-#'   \item{id}{index value}
 #'   \item{work}{name of work}
 #'   \item{artist}{name of artist}
 #' }
