@@ -1,0 +1,14 @@
+Package: lisa
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tyler",
+           family = "Littlefield",
+           role = c("aut", "cre"),
+           email = "tylurp1@gmail.com")
+Description: What the package does (one paragraph).
+Depends: R (>= 2.10)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
