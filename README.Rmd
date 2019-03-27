@@ -32,7 +32,12 @@ devtools::install_github("tylurp/lisa")
 
 Here's a sample of the available palettes:
 
-```{r example, results='hide'}
+```{r, include=FALSE}
+set.seed(4378)
+```
+
+
+```{r example1, results='hide'}
 library(lisa)
 
 par(mfrow = c(6, 3))

@@ -29,7 +29,7 @@ par(mfrow = c(6, 3))
 lapply(sample(lisa, 18), plot)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-example1-1.png" width="100%" />
 
 You can also call and/or modify palettes using `lisa_palette`:
 
