@@ -8,8 +8,7 @@ x <- "http://colorlisa.com/" %>%
   html_text() %>%
   gsub("\n", ",", .) %>%
   gsub(" ", "", .) %>%
-  gsub("by", "SEP", .) %>%
-  str_split(., "SEP") %>%
+  str_split(., "by") %>%
   enframe() %>%
   unnest() %>%
   filter(
@@ -40,4 +39,5 @@ for (i in 1:length(x)) {
 }
 
 lisa <- x
+lisa
 usethis::use_data(lisa, overwrite = TRUE)

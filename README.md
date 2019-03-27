@@ -38,11 +38,12 @@ lapply(sample(lisa, 18), plot)
 You can also call and/or modify palettes using `lisa_palette`:
 
 ``` r
-x <- lisa_palette("JackBush_1", n = 100, "continuous")
-plot(x)
+x <- lisa_palette("JackBush_1", n = 1000, "continuous")
+y <- lisa_palette("KatsushikaHokusai", n = 1000, "continuous")
+lapply(list(x, y), plot)
 ```
 
-<img src="man/figures/README-example2-1.png" width="100%" />
+<img src="man/figures/README-example2-1.png" width="100%" /><img src="man/figures/README-example2-2.png" width="100%" />
 
 ## Acknowledgements
 
