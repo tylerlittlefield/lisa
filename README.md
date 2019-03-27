@@ -12,7 +12,7 @@ status](https://ci.appveyor.com/api/projects/status/github/tyluRp/lisa?branch=ma
 <!-- badges: end -->
 
 This is a color palette R package that contains 128 palettes from
-[**colorlisa**](http://colorlisa.com/).
+[**Color Lisa**](http://colorlisa.com/).
 
 ## Installation
 
@@ -46,7 +46,7 @@ plot(x)
 
 ## Acknowledgements
 
-  - [**colorlisa**](http://colorlisa.com/) for the color palettes
+  - [**Color Lisa**](http://colorlisa.com/) for the color palettes
   - The [`wesanderson`](https://github.com/karthik/wesanderson) package
     for source code that powers pretty much everything in this
     repository.
