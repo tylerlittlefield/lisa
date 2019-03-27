@@ -53,10 +53,10 @@ y <- lisa_palette("KatsushikaHokusai", n = 1000, "continuous")
 lapply(list(x, y), plot)
 ```
 
-Finally, all palettes have 3 attributes associated with them: _class_, _name_, and _work_:
+Finally, all palettes have 3 attributes associated with them, _class_, _name_, and _work_:
 
 ```{r}
-sample(lisa, 3)
+attributes(lisa$VincentvanGogh)
 
 head(work, 5)
 ```
