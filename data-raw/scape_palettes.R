@@ -1,11 +1,11 @@
+# A really crude and messy way of scraping the palettes...
+
 library(tidyverse)
 library(rvest)
 
 x <- "http://colorlisa.com/" %>%
   read_html() %>%
-  html_text()
-
-x <- x %>%
+  html_text() %>%
   gsub("\n", ",", .) %>%
   gsub(" ", "", .) %>%
   gsub("by", "SEP", .) %>%
@@ -18,35 +18,26 @@ x <- x %>%
     !str_detect(value, "RyanMcGuire|BellsDesign|colorobsessedd")
   ) %>%
   mutate(value = str_replace_all(value, "[,]+", ",")) %>%
-  separate(value, c("artist", "col1", "col2", "col3", "col4", "col5"), ",") %>%
-  print(n = Inf)
+  separate(value, c("artist", "col1", "col2", "col3", "col4", "col5"), ",")
 
 artist_names <- x$artist
 artist_names <- make.unique(artist_names, sep = "_")
+artist_names[22:23] <- c("SalvadorDali", "SalvadorDali_1")
+artist_names[71:72] <- c("ReneMagritte", "ReneMagritte_1")
 
 x <- x %>%
   mutate(id = row_number()) %>%
   select(-name) %>%
   gather(key, value, -c(artist, id)) %>%
-  split(.$id)
+  split(.$id) %>%
+  lapply(., `[[`, 4) %>%
+  unname()
 
-palettes <- lapply(x, `[[`, "value")
-# names(palettes) <- artist_names
+names(x) <- artist_names
 
-names(palettes) <- artist_names
-
-palettes <- unname(palettes)
-
-assign_structure <- function(palette, name) {
-  structure(palette, class = c("lisa_palette", class(palette)), name = name)
+for (i in 1:length(x)) {
+  x[[i]] <- structure(x[[i]], class = c("lisa_palette", "character"), name = artist_names[[i]])
 }
 
-lisa_palettes <- list()
-for (i in 1:length(palettes)) {
-  lisa_palettes[[i]] <- assign_structure(palettes[i], name = names(palettes[i]))
-}
-
-names(lisa_palettes) <- artist_names
-lisa <- lisa_palettes
-
+lisa <- x
 usethis::use_data(lisa, overwrite = TRUE)
