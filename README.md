@@ -45,6 +45,39 @@ lapply(list(x, y), plot)
 
 <img src="man/figures/README-example2-1.png" width="100%" /><img src="man/figures/README-example2-2.png" width="100%" />
 
+Finally, all palettes have 3 attributes associated with them: *class*,
+*name*, and *work*:
+
+``` r
+sample(lisa, 3)
+#> $RoyLichtenstein_1
+#> [1] "#00020E" "#FFDE01" "#A5BAD6" "#F1C9C7" "#BD0304"
+#> attr(,"class")
+#> [1] "lisa_palette" "character"   
+#> attr(,"name")
+#> [1] "RoyLichtenstein_1"
+#> attr(,"work")
+#> [1] "Hopeless"
+#> 
+#> $RichardDiebenkorn
+#> [1] "#2677A5" "#639BC1" "#639BC1" "#90A74A" "#5D8722"
+#> attr(,"class")
+#> [1] "lisa_palette" "character"   
+#> attr(,"name")
+#> [1] "RichardDiebenkorn"
+#> attr(,"work")
+#> [1] "Seawall"
+#> 
+#> $BillyApple
+#> [1] "#F24D98" "#813B7C" "#59D044" "#F3A002" "#F2F44D"
+#> attr(,"class")
+#> [1] "lisa_palette" "character"   
+#> attr(,"name")
+#> [1] "BillyApple"
+#> attr(,"work")
+#> [1] "Rainbow"
+```
+
 ## Acknowledgements
 
   - [**Color Lisa**](http://colorlisa.com/) for the color palettes
