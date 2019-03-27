@@ -9,6 +9,10 @@
 lisa
 }
 \description{
+A list containing all available palettes (128) and their attributes (artist
+name, name of work).
+}
+\details{
 Source: \url{http://colorlisa.com/}
 }
 \keyword{datasets}

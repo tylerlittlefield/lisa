@@ -58,4 +58,6 @@ for (i in 1:length(hex)) {
 }
 
 lisa <- hex
+work <- as.data.frame(artist_work)
 usethis::use_data(lisa, overwrite = TRUE)
+usethis::use_data(work, overwrite = TRUE)

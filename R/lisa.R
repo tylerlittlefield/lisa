@@ -1,7 +1,25 @@
 #' List of all available palettes
 #'
+#' A list containing all available palettes (128) and their attributes (artist
+#' name, name of work).
+#'
 #' Source: \url{http://colorlisa.com/}
 "lisa"
+
+#' Name of work and artist
+#'
+#' A dataset containing the artist name and the name of the work which the palette
+#' comes from. These values are also recorded as \code{attributes} for each palette.
+#'
+#' @format A data frame with 128 rows and 3 variables:
+#' \describe{
+#'   \item{id}{index value}
+#'   \item{work}{name of work}
+#'   \item{artist}{name of artist}
+#' }
+#'
+#' Source: \url{http://colorlisa.com/}
+"work"
 
 #' Call or modify lisa palettes
 #'
