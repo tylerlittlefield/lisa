@@ -7,7 +7,7 @@
 lisa_palette(name, n, type = c("discrete", "continuous"))
 }
 \arguments{
-\item{name}{Name of desired palette. See \code{names(geopalettes)}}
+\item{name}{Name of desired palette. See \code{names(lisa)}}
 
 \item{n}{Number of colors desired.}
 

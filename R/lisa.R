@@ -23,7 +23,7 @@
 #' Call or modify lisa palettes
 #'
 #' @param n Number of colors desired.
-#' @param name Name of desired palette. See \code{names(geopalettes)}
+#' @param name Name of desired palette. See \code{names(lisa)}
 #' @param type Either "continuous" or "discrete". Use continuous if you want
 #' to automatically interpolate between colours.
 #'
