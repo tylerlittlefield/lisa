@@ -1,12 +1,12 @@
 #' List of all available palettes
 #'
-#' A list containing all available palettes (128) and their attributes (artist
-#' name, name of work).
+#' A list containing all available palettes (128) and their attributes (class,
+#' artist name and the name of the artwork).
 #'
 #' Source: \url{http://colorlisa.com/}
 "lisa"
 
-#' Artist names, palette names, artwork names
+#' Artist, palettes, and artwork names
 #'
 #' A dataset containing the name of the artist, palette, and artwork.
 #'
@@ -23,12 +23,12 @@
 #' Call or modify lisa palettes
 #'
 #' @param n Number of colors desired.
-#' @param name Name of desired palette. See \code{names(lisa)}
+#' @param name Name of desired palette. See \code{names(lisa)}.
 #' @param type Either "continuous" or "discrete". Use continuous if you want
-#' to automatically interpolate between colours.
+#' to automatically interpolate between colors.
 #'
 #' @importFrom graphics rect par image text
-#' @return A vector of colours.
+#' @return A vector of colors.
 #' @examples
 #' lisa_palette(name = "Prince", n = 10, type = "continuous")
 #' lisa_palette("PabloPicasso", 2, "discrete")

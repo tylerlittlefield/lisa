@@ -3,7 +3,7 @@
 \docType{data}
 \name{artwork}
 \alias{artwork}
-\title{Artist names, palette names, artwork names}
+\title{Artist, palettes, and artwork names}
 \format{A data frame with 128 rows and 3 variables:
 \describe{
   \item{artist}{name of artist}
