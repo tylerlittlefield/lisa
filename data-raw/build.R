@@ -59,5 +59,24 @@ for (i in 1:length(hex)) {
 
 lisa <- hex
 work <- as.data.frame(artist_work[c("work", "artist")])
+artwork <- work %>%
+  mutate(palette = names(lisa)) %>%
+  select(artist, palette, work)
+
+test <- artwork %>%
+  mutate(work = str_remove(work, ",$"))
+
+# did regex screw things up
+anti_join(artwork, test)
+
+# nope
+artwork <- artwork %>%
+  mutate(work = str_remove(work, ",$"))
+
+# fix work names (removing trailing commas)
+for (i in 1:length(lisa)) {
+  attr(lisa[[i]], "work") <- artwork$work[i]
+}
+
 usethis::use_data(lisa, overwrite = TRUE)
-usethis::use_data(work, overwrite = TRUE)
+usethis::use_data(artwork, overwrite = TRUE)

@@ -20,3 +20,7 @@ A vector of colours.
 \description{
 Call or modify lisa palettes
 }
+\examples{
+lisa_palette(name = "Prince", n = 10, type = "continuous")
+lisa_palette("PabloPicasso", 2, "discrete")
+}

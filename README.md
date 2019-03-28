@@ -38,12 +38,13 @@ lapply(sample(lisa, 18), plot)
 You can also call and/or modify palettes using `lisa_palette`:
 
 ``` r
-x <- lisa_palette("JackBush_1", n = 1000, "continuous")
-y <- lisa_palette("KatsushikaHokusai", n = 1000, "continuous")
-lapply(list(x, y), plot)
+x <- lisa_palette("JackBush_1", 1000, "continuous")
+y <- lisa_palette("PabloPicasso", 2, "discrete")
+z <- lisa_palette("KatsushikaHokusai", 1000, "continuous")
+lapply(list(x, y, z), plot)
 ```
 
-<img src="man/figures/README-example2-1.png" width="100%" /><img src="man/figures/README-example2-2.png" width="100%" />
+<img src="man/figures/README-example2-1.png" width="100%" /><img src="man/figures/README-example2-2.png" width="100%" /><img src="man/figures/README-example2-3.png" width="100%" />
 
 Finally, all palettes have 3 attributes associated with them:
 
@@ -60,13 +61,13 @@ attributes(lisa$VincentvanGogh)
 #> [1] "The Starry Night"
 
 # there is also a data.frame (excludes class)
-head(work, 5)
-#>                                work            artist
-#> 1     Adobe (Variant): Luminous Day      Josef Albers
-#> 2 Homage to the Square (La Tehuana)      Josef Albers
-#> 3                      Golden Cloud Gretchen Albrecht
-#> 4                           Rainbow       Billy Apple
-#> 5                              Spar       Per Arnoldi
+head(artwork, 5)
+#>              artist          palette                              work
+#> 1      Josef Albers      JosefAlbers     Adobe (Variant): Luminous Day
+#> 2      Josef Albers    JosefAlbers_1 Homage to the Square (La Tehuana)
+#> 3 Gretchen Albrecht GretchenAlbrecht                      Golden Cloud
+#> 4       Billy Apple       BillyApple                           Rainbow
+#> 5       Per Arnoldi       PerArnoldi                              Spar
 ```
 
 ## Acknowledgements

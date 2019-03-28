@@ -6,19 +6,19 @@
 #' Source: \url{http://colorlisa.com/}
 "lisa"
 
-#' Name of work and artist
+#' Artist names, palette names, artwork names
 #'
-#' A dataset containing the artist name and the name of the work which the palette
-#' comes from. These values are also recorded as \code{attributes} for each palette.
+#' A dataset containing the name of the artist, palette, and artwork.
 #'
-#' @format A data frame with 128 rows and 2 variables:
+#' @format A data frame with 128 rows and 3 variables:
 #' \describe{
-#'   \item{work}{name of work}
 #'   \item{artist}{name of artist}
+#'   \item{palette}{name of the palette}
+#'   \item{work}{name of artwork}
 #' }
 #'
 #' Source: \url{http://colorlisa.com/}
-"work"
+"artwork"
 
 #' Call or modify lisa palettes
 #'
@@ -29,6 +29,9 @@
 #'
 #' @importFrom graphics rect par image text
 #' @return A vector of colours.
+#' @examples
+#' lisa_palette(name = "Prince", n = 10, type = "continuous")
+#' lisa_palette("PabloPicasso", 2, "discrete")
 #' @export
 lisa_palette <- function(name, n, type = c("discrete", "continuous")) {
   type <- match.arg(type)

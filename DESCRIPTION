@@ -1,12 +1,12 @@
 Package: lisa
-Title: R color palettes from colorlisa
+Title: R color palettes from Color Lisa
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Tyler",
            family = "Littlefield",
            role = c("aut", "cre"),
            email = "tylurp1@gmail.com")
-Description: This is a color palette R package that contains 128 palettes from colorlisa.
+Description: This is a color palette R package that contains 128 palettes from Color Lisa.
 Depends: R (>= 2.10)
 License: MIT + file LICENSE
 Encoding: UTF-8

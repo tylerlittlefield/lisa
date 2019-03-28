@@ -48,9 +48,10 @@ lapply(sample(lisa, 18), plot)
 You can also call and/or modify palettes using `lisa_palette`:
 
 ```{r example2, fig.height=1, results='hide'}
-x <- lisa_palette("JackBush_1", n = 1000, "continuous")
-y <- lisa_palette("KatsushikaHokusai", n = 1000, "continuous")
-lapply(list(x, y), plot)
+x <- lisa_palette("JackBush_1", 1000, "continuous")
+y <- lisa_palette("PabloPicasso", 2, "discrete")
+z <- lisa_palette("KatsushikaHokusai", 1000, "continuous")
+lapply(list(x, y, z), plot)
 ```
 
 Finally, all palettes have 3 attributes associated with them:
@@ -60,7 +61,7 @@ Finally, all palettes have 3 attributes associated with them:
 attributes(lisa$VincentvanGogh)
 
 # there is also a data.frame (excludes class)
-head(work, 5)
+head(artwork, 5)
 ```
 
 ## Acknowledgements
