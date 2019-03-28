@@ -14,6 +14,8 @@ status](https://ci.appveyor.com/api/projects/status/github/tyluRp/lisa?branch=ma
 This is a color palette R package that contains 128 palettes from
 [**Color Lisa**](http://colorlisa.com/).
 
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
 ## Installation
 
 You can install `lisa` from GitHub with `devtools`:
