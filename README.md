@@ -9,6 +9,8 @@
 status](https://travis-ci.org/tyluRp/lisa.svg?branch=master)](https://travis-ci.org/tyluRp/lisa)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/tyluRp/lisa?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/lisa)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/lisa)](https://cran.r-project.org/package=lisa)
 <!-- badges: end -->
 
 This is a color palette R package that contains 128 palettes from
@@ -18,9 +20,16 @@ This is a color palette R package that contains 128 palettes from
 
 ## Installation
 
-You can install `lisa` from GitHub with `devtools`:
+Install the released version of `lisa` from CRAN:
 
 ``` r
+install.packages("lisa")
+```
+
+Or install the development version from GitHub with:
+
+``` r
+# install.packages("devtools")
 devtools::install_github("tylurp/lisa")
 ```
 
