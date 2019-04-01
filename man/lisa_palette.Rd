@@ -7,15 +7,15 @@
 lisa_palette(name, n, type = c("discrete", "continuous"))
 }
 \arguments{
-\item{name}{Name of desired palette. See \code{names(lisa)}}
+\item{name}{Name of desired palette. See \code{names(lisa)}.}
 
 \item{n}{Number of colors desired.}
 
 \item{type}{Either "continuous" or "discrete". Use continuous if you want
-to automatically interpolate between colours.}
+to automatically interpolate between colors.}
 }
 \value{
-A vector of colours.
+A vector of colors.
 }
 \description{
 Call or modify lisa palettes
