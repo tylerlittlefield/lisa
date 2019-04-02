@@ -25,12 +25,15 @@ knitr::opts_chunk$set(
 This is a color palette R package that contains 128 palettes from [**Color Lisa**](http://colorlisa.com/). 
 
 ```{r echo=FALSE, fig.height=2}
-library(ggplot2)
+library(lisa)
 
-  ggplot(mtcars, aes(mpg, wt)) +
-    geom_point(aes(fill = factor(cyl)), size = 5, pch = 21, show.legend = FALSE) + 
-    scale_fill_manual(values = lisa::lisa$`Jean-MichelBasquiat`) +
-    theme_void()
+parts <- data.frame(
+  names = names(lisa),
+  vals = 1
+)
+
+waffle::waffle(parts, rows = 5, colors = purrr::flatten_chr(lisa)) +
+  ggplot2::theme(legend.position = "none")
 ```
 
 ## Installation
