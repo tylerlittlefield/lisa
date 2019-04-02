@@ -11,6 +11,8 @@ status](https://travis-ci.org/tyluRp/lisa.svg?branch=master)](https://travis-ci.
 status](https://ci.appveyor.com/api/projects/status/github/tyluRp/lisa?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/lisa)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/lisa)](https://cran.r-project.org/package=lisa)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/lisa)](https://cran.r-project.org/package=lisa)
 <!-- badges: end -->
 
 This is a color palette R package that contains 128 palettes from
