@@ -18,7 +18,7 @@ downloads](https://cranlogs.r-pkg.org/badges/lisa)](https://cran.r-project.org/p
 This is a color palette R package that contains 128 palettes from
 [**Color Lisa**](http://colorlisa.com/).
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-waffle-1.png" width="100%" />
 
 ## Installation
 
