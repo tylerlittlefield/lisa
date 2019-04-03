@@ -13,6 +13,8 @@ status](https://ci.appveyor.com/api/projects/status/github/tyluRp/lisa?branch=ma
 status](https://www.r-pkg.org/badges/version/lisa)](https://cran.r-project.org/package=lisa)
 [![CRAN
 downloads](https://cranlogs.r-pkg.org/badges/lisa)](https://cran.r-project.org/package=lisa)
+[![Codecov test
+coverage](https://codecov.io/gh/tyluRp/lisa/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/lisa?branch=master)
 <!-- badges: end -->
 
 This is a color palette R package that contains 128 palettes from

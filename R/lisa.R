@@ -35,6 +35,7 @@
 #' @export
 lisa_palette <- function(name, n, type = c("discrete", "continuous")) {
   type <- match.arg(type)
+  work <- attributes(lisa::lisa[[name]])$work
 
   pal <- lisa::lisa[[name]]
   if (is.null(pal))
@@ -52,5 +53,5 @@ lisa_palette <- function(name, n, type = c("discrete", "continuous")) {
                 continuous = grDevices::colorRampPalette(pal)(n),
                 discrete = pal[1:n]
   )
-  structure(out, class = "lisa_palette", name = name)
+  structure(out, class = "lisa_palette", name = name, work = work)
 }
