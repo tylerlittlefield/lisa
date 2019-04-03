@@ -11,8 +11,7 @@ status](https://travis-ci.org/tyluRp/lisa.svg?branch=master)](https://travis-ci.
 status](https://ci.appveyor.com/api/projects/status/github/tyluRp/lisa?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/lisa)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/lisa)](https://cran.r-project.org/package=lisa)
-[![CRAN
-downloads](https://cranlogs.r-pkg.org/badges/lisa)](https://cran.r-project.org/package=lisa)
+[![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/lisa)](https://cran.r-project.org/package=lisa)
 [![Codecov test
 coverage](https://codecov.io/gh/tyluRp/lisa/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/lisa?branch=master)
 <!-- badges: end -->
