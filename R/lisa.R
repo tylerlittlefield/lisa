@@ -53,5 +53,6 @@ lisa_palette <- function(name, n, type = c("discrete", "continuous")) {
                 continuous = grDevices::colorRampPalette(pal)(n),
                 discrete = pal[1:n]
   )
-  structure(out, class = "lisa_palette", name = name, work = work)
+
+  structure(out, class = c("lisa_palette", class(out)), name = name, work = work)
 }

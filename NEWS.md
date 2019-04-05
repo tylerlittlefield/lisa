@@ -1,6 +1,7 @@
 # lisa 0.1.0.9000
 
-* `lisa_palette` function returns the "work" attribute now  .
+* `lisa_palette` returns the "work" attribute now.
+* `lisa_palette` preserves character class.
 
 # lisa 0.1.0
 
