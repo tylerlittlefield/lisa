@@ -14,4 +14,6 @@ test_that("attributes are intact", {
 
   expect_true(unlist(unique(lapply(lisa, function(x) lisa:::is.lisa_palette(x)))))
 
+  expect_equal(names(attributes(lisa::lisa_palette("JosefAlbers"))), c("class", "name", "work"))
+
 })
