@@ -36,6 +36,10 @@ Or install the development version from GitHub with:
 devtools::install_github("tylurp/lisa")
 ```
 
+If you aren’t an R user, you might be interested in
+[palettes.yml](inst/extdata/palettes.yml) which contains all palettes in
+[YAML](https://en.wikipedia.org/wiki/YAML) format.
+
 ## Palettes
 
 Here’s a sample of the available palettes:
@@ -87,6 +91,5 @@ head(artwork, 5)
 ## Acknowledgements
 
   - [**Color Lisa**](http://colorlisa.com/) for the color palettes
-  - The [`wesanderson`](https://github.com/karthik/wesanderson) package
-    for source code that powers pretty much everything in this
-    repository.
+  - [`wesanderson`](https://github.com/karthik/wesanderson) for source
+    code that powers most things in this repository

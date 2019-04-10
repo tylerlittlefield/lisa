@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/tyluRp/lisa/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/lisa?branch=master)
 <!-- badges: end -->
 
-This is a color palette R package that contains 128 palettes from [**Color Lisa**](http://colorlisa.com/). 
+This is a color palette R package that contains 128 palettes from [**Color Lisa**](http://colorlisa.com/).
 
 ```{r waffle, echo=FALSE, fig.height=2}
 library(lisa)
@@ -51,6 +51,8 @@ Or install the development version from GitHub with:
 # install.packages("devtools")
 devtools::install_github("tylurp/lisa")
 ```
+
+If you aren't an R user, you might be interested in [palettes.yml](inst/extdata/palettes.yml) which contains all palettes in [YAML](https://en.wikipedia.org/wiki/YAML) format.
 
 ## Palettes
 
@@ -89,4 +91,4 @@ head(artwork, 5)
 ## Acknowledgements
 
 * [**Color Lisa**](http://colorlisa.com/) for the color palettes
-* The [`wesanderson`](https://github.com/karthik/wesanderson) package for source code that powers pretty much everything in this repository.
+* [`wesanderson`](https://github.com/karthik/wesanderson) for source code that powers most things in this repository
