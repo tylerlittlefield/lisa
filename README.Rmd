@@ -84,7 +84,10 @@ Finally, all palettes have 3 attributes associated with them:
 # shows the class, artist name, and name of work
 attributes(lisa$VincentvanGogh)
 
-# there is also a data.frame (excludes class)
+# attributes do not print by default
+lisa$VincentvanGogh
+
+# there is also a data.frame with palette descriptions
 head(artwork, 5)
 ```
 

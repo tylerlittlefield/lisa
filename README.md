@@ -78,7 +78,11 @@ attributes(lisa$VincentvanGogh)
 #> $work
 #> [1] "The Starry Night"
 
-# there is also a data.frame (excludes class)
+# attributes do not print by default
+lisa$VincentvanGogh
+#> [1] "#1a3431" "#2b41a7" "#6283c8" "#ccc776" "#c7ad24"
+
+# there is also a data.frame with palette descriptions
 head(artwork, 5)
 #>              artist          palette                              work
 #> 1      Josef Albers      JosefAlbers     Adobe (Variant): Luminous Day

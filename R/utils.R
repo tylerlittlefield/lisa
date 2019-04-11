@@ -20,7 +20,7 @@ plot.lisa_palette <- function(x, ...) {
 }
 
 #' @export
-print.lisa_palette <- function(x, ...){
+print.lisa_palette <- function(x, ...) {
   if (is.lisa_palette(x)) attributes(x) <- NULL
   print.default(x, ...)
 }
