@@ -78,7 +78,7 @@ z <- lisa_palette("KatsushikaHokusai", 1000, "continuous")
 lapply(list(x, y, z), plot)
 ```
 
-Finally, all palettes have 3 attributes associated with them:
+All palettes have 3 attributes associated with them:
 
 ```{r}
 # shows the class, artist name, and name of work
@@ -90,6 +90,18 @@ lisa$VincentvanGogh
 # there is also a data.frame with palette descriptions
 head(artwork, 5)
 ```
+
+Example `ggplot2` usage:
+
+```{r ggplot2-example}
+library(ggplot2)
+
+ggplot(mtcars, aes(mpg, disp)) + 
+  geom_point(aes(col = factor(gear)), size = 3) + 
+  scale_color_manual(values = lisa$`Jean-MichelBasquiat`) + 
+  theme_bw()
+```
+
 
 ## Acknowledgements
 

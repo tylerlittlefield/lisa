@@ -64,7 +64,7 @@ lapply(list(x, y, z), plot)
 
 <img src="man/figures/README-example2-1.png" width="100%" /><img src="man/figures/README-example2-2.png" width="100%" /><img src="man/figures/README-example2-3.png" width="100%" />
 
-Finally, all palettes have 3 attributes associated with them:
+All palettes have 3 attributes associated with them:
 
 ``` r
 # shows the class, artist name, and name of work
@@ -91,6 +91,19 @@ head(artwork, 5)
 #> 4       Billy Apple       BillyApple                           Rainbow
 #> 5       Per Arnoldi       PerArnoldi                              Spar
 ```
+
+Example `ggplot2` usage:
+
+``` r
+library(ggplot2)
+
+ggplot(mtcars, aes(mpg, disp)) + 
+  geom_point(aes(col = factor(gear)), size = 3) + 
+  scale_color_manual(values = lisa$`Jean-MichelBasquiat`) + 
+  theme_bw()
+```
+
+<img src="man/figures/README-ggplot2-example-1.png" width="100%" />
 
 ## Acknowledgements
 
