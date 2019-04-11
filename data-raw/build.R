@@ -78,5 +78,5 @@ for (i in 1:length(lisa)) {
   attr(lisa[[i]], "work") <- artwork$work[i]
 }
 
-usethis::use_data(lisa, overwrite = TRUE)
-usethis::use_data(artwork, overwrite = TRUE)
+# usethis::use_data(lisa, overwrite = TRUE)
+# usethis::use_data(artwork, overwrite = TRUE)
