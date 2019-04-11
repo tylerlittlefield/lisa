@@ -18,3 +18,9 @@ plot.lisa_palette <- function(x, ...) {
     text((n + 1) / 2, 1, labels = attr(x, "name"), cex = 1, family = "mono")
   }
 }
+
+#' @export
+print.lisa_palette <- function(x, ...){
+  if (is.lisa_palette(x)) attributes(x) <- NULL
+  print.default(x, ...)
+}
