@@ -7,6 +7,13 @@ is.lisa_palette <- function(x) {
 #' @importFrom grDevices rgb
 plot.lisa_palette <- function(x, ...) {
   if(is.lisa_palette(x)) {
+
+    if(length(list(...))) {
+      label = list(...)[[1]]
+    } else {
+      label = attr(x, "name")
+    }
+
     n <- length(x)
     old <- par(mar = c(0.5, 0.5, 0.5, 0.5))
     on.exit(par(old))
@@ -15,7 +22,7 @@ plot.lisa_palette <- function(x, ...) {
           ylab = "", xaxt = "n", yaxt = "n", bty = "n")
 
     rect(0, 0.9, n + 1, 1.1, col = rgb(1, 1, 1, 0.8), border = NA)
-    text((n + 1) / 2, 1, labels = attr(x, "name"), cex = 1, family = "mono")
+    text((n + 1) / 2, 1, labels = label, cex = 1, family = "mono")
   }
 }
 

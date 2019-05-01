@@ -1,0 +1,83 @@
+---
+title: "How does lisa palette work?"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How does lisa palette work?}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The function `lisa_palette` allows users to call and modify palettes by adjusting the parameters `n` and `type` where `n` represents the number of colors and `type` represents _discrete_ or _continuous_. So how does this work? Under the hood, `grDevices::colorRampPalette()` is doing all the work, see [here](https://github.com/tyluRp/lisa/blob/d59da6904dad2391a29ec194d8a673c68df943b5/R/lisa.R#L53). Unfortunately, I am unable to dive into the details of how `colorRampPalette()` works but we can at least see how this works visually. The palette we will use is `AndyWarhol_3`, Andy Warhol's [_Mick Jagger_](https://www.moma.org/collection/works/71518?locale=en).
+
+```{r setup, fig.height=1}
+library(lisa)
+
+plot(lisa$AndyWarhol_3)
+```
+
+To compare how things change with `lisa_palette` we can create a list of 10 palettes:
+
+1. 5 discrete palettes with n = 1:5
+2. 5 continuous palettes with n = 1:5
+
+Note: You will not be able to reproduce this plot with the released version from CRAN, install the latest from GitHub if you want to reproduce. The CRAN version doesn't allow you to modify the plot title.
+
+```{r, fig.height = 2, results='hide'}
+x <- lapply(1:5, function(x) structure(lisa_palette("AndyWarhol_3", n = x, "continuous"), name = paste0(x, ", continuous")))
+y <- lapply(1:5, function(x) structure(lisa_palette("AndyWarhol_3", n = x, "discrete"), name = paste0(x, ", discrete")))
+
+par(mfrow = c(2, 5))
+lapply(c(x, y), plot)
+```
+
+The behavior for discrete palettes is pretty straight forward, it just picks 1:n colors from the palette vector, for example:
+
+```{r}
+lisa$AndyWarhol_3[1:3]
+lisa_palette("AndyWarhol_3", n = 3, type = "discrete")
+```
+
+If you ask for more than 5 colors palettes, it'll throw an error because only 5 exist. 
+
+```{r, error=TRUE}
+lisa_palette("AndyWarhol_3", n = 6, type = "discrete")
+```
+
+The behavior for continuous palettes is a bit different, it tries to interpolate a set of colors to create a new palette. It does this with `colorRampPalette()` from the `grDevices` package:
+
+```{r}
+grDevices::colorRampPalette(lisa$AndyWarhol_3)(3)
+```
+
+Which is equivalent to:
+
+```{r}
+ramp <- colorRamp(lisa$AndyWarhol_3)
+x <- ramp(seq.int(0, 1, length.out = 3))
+  if (ncol(x) == 4L) {
+    rgb(x[, 1L], x[, 2L], x[, 3L], x[, 4L], maxColorValue = 255)
+  } else {
+    rgb(x[, 1L], x[, 2L], x[, 3L], maxColorValue = 255)
+  }
+```
+
+Where the code chunk above is the source code for `colorRampPalette()` with a few changes to the formatting, see [here](https://github.com/wch/r-source/blob/5a156a0865362bb8381dcd69ac335f5174a4f60c/src/library/grDevices/R/colorRamp.R) for the true source code. 
+
+Having said all of this, in order to truly understand how this works, you would need to analyze that chunk of code and any other chunks that it depends on. Beware, from this point on it gets complicated (for me at least) and I don't think I could accurately articulate what's going on behind the scenes, so I wont. 
+
+In short, `colorRampPalette()` depends on a secondary function `colorRamp()` which depends on `convertColor()` and so on, see the history of these functions [here](https://github.com/wch/r-source/commits/5a156a0865362bb8381dcd69ac335f5174a4f60c/src/library/grDevices/R/colorRamp.R) and the initial commit [here](https://github.com/wch/r-source/commit/ea07369869b3ab1f2fa05fb221a57a5b117c0fc5#diff-10c83c04d434b2bd02fbbcb84dd92cfb) by [Thomas Lumley](https://twitter.com/tslumley) in 2004. Whats interesting is the [link](http://www.brucelindbloom.com/) Thomas provided in the source code which seems to be where a lot of the math involved in color interpolation comes from. For the layman like myself, I will just embrace the magic behind color interpolation.
+
+```{r, fig.height=1, results='hide'}
+x <- lisa$AndyWarhol_3
+y <- lisa_palette("AndyWarhol_3", 1000, "continuous")
+
+lapply(list(x, y), plot)
+```
+

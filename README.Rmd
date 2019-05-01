@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 
 This is a color palette R package that contains 128 palettes from [**Color Lisa**](http://colorlisa.com/).
 
-```{r waffle, echo=FALSE, fig.height=2}
+```{r waffle, echo=FALSE, fig.height=2, warning=FALSE, message=FALSE}
 library(lisa)
 
 parts <- data.frame(

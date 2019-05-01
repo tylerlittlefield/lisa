@@ -8,3 +8,6 @@
 ^data-raw$
 ^lisa\.Rproj$
 ^\.Rproj\.user$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
