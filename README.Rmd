@@ -59,7 +59,7 @@ If you aren't an R user, you might be interested in [palettes.yml](inst/extdata/
 Here's a sample of the available palettes:
 
 ```{r, include=FALSE}
-set.seed(4378)
+set.seed(4376)
 ```
 
 ```{r example1, results='hide'}
