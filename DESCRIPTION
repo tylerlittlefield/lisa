@@ -1,6 +1,6 @@
 Package: lisa
 Title: Color Palettes from Color Lisa
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: 
     person(given = "Tyler",
            family = "Littlefield",
