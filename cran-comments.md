@@ -1,10 +1,10 @@
-## Resubmission
-This is a resubmission. In this version I have:
+## Package update
+This is a package update. A couple of small changes have been made.
 
-* Removed the redundant "R" in the title, and "R package" in the 
-description.
-
-* Added reference to the description.
+* lisa_palette function returns the "work" attribute now.
+* lisa_palette preserves character class.
+* lisa_palette no longer prints attributes by default.
+* You can change the title when plotting a lisa palette.
 
 ## Test environments
 * local OS X install, R 3.5.3
@@ -14,5 +14,3 @@ description.
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
-
-* This is a new release.
