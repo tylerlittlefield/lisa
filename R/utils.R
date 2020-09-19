@@ -28,6 +28,9 @@ plot.lisa_palette <- function(x, ...) {
 
 #' @export
 print.lisa_palette <- function(x, ...) {
-  if (is.lisa_palette(x)) attributes(x) <- NULL
-  print.default(x, ...)
+  if (is.lisa_palette(x)) {
+    cat("* Work:", attr(x, "work"), "\n")
+    cat("* Author:", attr(x, "name"), "\n")
+    cat("* Colors:", x)
+  }
 }

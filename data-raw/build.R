@@ -1,82 +1,66 @@
-library(tidyverse)
+library(dplyr)
+library(stringr)
 library(rvest)
 
-raw <- "http://colorlisa.com/" %>%
-  read_html()
+# html content
+colorlisa <- read_html("http://colorlisa.com/")
 
-# authors first name, 97 total
-raw %>%
-  html_nodes("h2>em") %>%
+# colors in hexcodes
+colors <- colorlisa %>%
+  html_nodes(xpath = "//div[@class='palette__content']") %>%
+  html_text() %>%
+  str_squish()
+
+# urls of the artwork
+url <- colorlisa %>%
+  html_nodes(xpath = "//h3[@class='palette__author']") %>%
+  html_nodes("a") %>%
+  html_attr("href")
+
+# artwork name
+work <- colorlisa %>%
+  html_nodes(xpath = "//h3[@class='palette__author']") %>%
+  html_nodes("strong") %>%
   html_text()
 
-# authors last name, 97 total
-raw %>%
-  html_nodes("h2>strong") %>%
+# author name
+author <- colorlisa %>%
+  html_nodes(xpath = "//h3[@class='palette__author']") %>%
   html_text() %>%
-  .[1:97]
+  gsub(".*by", "", .) %>%
+  str_squish()
 
-# name or work, 128 total
-raw %>%
-  html_nodes("h3>a") %>%
-  html_text()
-
-raw %>%
-  html_nodes("artist")
-
-# artist + work, 128 total
-artist_work <- raw %>%
-  html_nodes("div>div>div>h3") %>%
-  html_text() %>%
-  gsub("\n", "", .) %>%
-  enframe("id") %>%
-  separate(value, c("work", "artist"), "by") %>%
-  mutate_all(str_trim) %>%
-  mutate(id = as.integer(id))
-
-p_split <- raw %>%
-  html_nodes("ul>li") %>%
-  html_text() %>%
-  enframe("id") %>%
-  filter(str_detect(value, "\n")) %>%
-  mutate(value = str_remove_all(value, "\n")) %>%
-  mutate(value = str_trim(value)) %>%
-  mutate(palette = rep(1:128, times=1, each=5)) %>%
-  left_join(artist_work, by = c("palette" = "id")) %>%
-  select(-id) %>%
-  split(.$palette)
-
-artist_names <- make.unique(gsub(" ", "", artist_work$artist), sep = "_")
-artist_names[22:23] <- c("SalvadorDali", "SalvadorDali_1")
-artist_names[71:72] <- c("ReneMagritte", "ReneMagritte_1")
-hex <- lapply(p_split, `[[`, 1)
-names(hex) <- artist_names
-
-for (i in 1:length(hex)) {
-  attr(hex[[i]], "class") <- c("lisa_palette", class(hex[[i]]))
-  attr(hex[[i]], "name") <- artist_names[i]
-  attr(hex[[i]], "work") <- artist_work$work[i]
+# list
+lisa <- str_split(colors, " ")
+for (i in seq_along(colors)) {
+  lisa[i] <- structure(
+    str_split(colors[i], " "),
+    class = c("lisa_palette", class(colors[i])),
+    name = author[i],
+    work = work[i]
+  )
 }
 
-lisa <- hex
-work <- as.data.frame(artist_work[c("work", "artist")])
-artwork <- work %>%
-  mutate(palette = names(lisa)) %>%
-  select(artist, palette, work)
-
-test <- artwork %>%
-  mutate(work = str_remove(work, ",$"))
-
-# did regex screw things up
-anti_join(artwork, test)
-
-# nope
-artwork <- artwork %>%
-  mutate(work = str_remove(work, ",$"))
-
-# fix work names (removing trailing commas)
-for (i in 1:length(lisa)) {
-  attr(lisa[[i]], "work") <- artwork$work[i]
+lisa <- str_split(colors, " ")
+for (i in seq_along(colors)) {
+  attr(lisa[[i]], "class") <- c("lisa_palette", class(colors[i]))
+  attr(lisa[[i]], "name") <- author[i]
+  attr(lisa[[i]], "work") <- work[i]
 }
 
-# usethis::use_data(lisa, overwrite = TRUE)
-# usethis::use_data(artwork, overwrite = TRUE)
+listnames <- make.unique(gsub(" ", "", author), sep = "_")
+listnames[22:23] <- c("SalvadorDali", "SalvadorDali_1")
+listnames[71:72] <- c("ReneMagritte", "ReneMagritte_1")
+names(lisa) <- listnames
+
+# dataframe
+artwork <- tibble::tibble(
+  author = author,
+  work = work,
+  palette = listnames,
+  colors = colors,
+  url = url
+)
+
+usethis::use_data(lisa, overwrite = TRUE)
+usethis::use_data(artwork, overwrite = TRUE)
