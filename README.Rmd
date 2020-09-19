@@ -16,12 +16,10 @@ knitr::opts_chunk$set(
 # lisa <img src="man/figures/logo.png" align="right" height=150/>
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/tyluRp/lisa.svg?branch=master)](https://travis-ci.org/tyluRp/lisa)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/tyluRp/lisa?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/lisa)
+[![R build status](https://github.com/tyluRp/lisa/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/lisa/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/lisa)](https://cran.r-project.org/package=lisa)
 [![CRAN_Download_Badge](https://cranlogs.r-pkg.org/badges/lisa)](https://cran.r-project.org/package=lisa)
 [![Codecov test coverage](https://codecov.io/gh/tyluRp/lisa/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/lisa?branch=master)
-[![R build status](https://github.com/tyluRp/lisa/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/lisa/actions)
 <!-- badges: end -->
 
 This is a color palette R package that contains 128 palettes from [**Color Lisa**](http://colorlisa.com/).
@@ -79,17 +77,16 @@ z <- lisa_palette("KatsushikaHokusai", 1000, "continuous")
 lapply(list(x, y, z), plot)
 ```
 
-All palettes have 3 attributes associated with them:
+All palettes have 3 attributes associated with them, you can access them with the `lisa` list:
 
 ```{r}
-# shows the class, artist name, and name of work
-attributes(lisa$VincentvanGogh)
-
-# attributes do not print by default
 lisa$VincentvanGogh
+```
 
-# there is also a data.frame with palette descriptions
-head(artwork, 5)
+There is also a table with more information of all available palettes:
+
+```{r}
+artwork
 ```
 
 Example `ggplot2` usage:
