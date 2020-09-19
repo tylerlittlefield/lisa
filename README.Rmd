@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/lisa)](https://cran.r-project.org/package=lisa)
 [![CRAN_Download_Badge](https://cranlogs.r-pkg.org/badges/lisa)](https://cran.r-project.org/package=lisa)
 [![Codecov test coverage](https://codecov.io/gh/tyluRp/lisa/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/lisa?branch=master)
+[![R build status](https://github.com/tyluRp/lisa/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/lisa/actions)
 <!-- badges: end -->
 
 This is a color palette R package that contains 128 palettes from [**Color Lisa**](http://colorlisa.com/).

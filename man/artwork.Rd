@@ -4,16 +4,23 @@
 \name{artwork}
 \alias{artwork}
 \title{Artist, palettes, and artwork names}
-\format{A data frame with 128 rows and 3 variables:
+\format{
+A data frame with 128 rows and 3 variables:
 \describe{
-  \item{artist}{name of artist}
-  \item{palette}{name of the palette}
+  \item{author}{name of artist}
   \item{work}{name of artwork}
+  \item{palette}{name of the palette}
+  \item{colors}{hex color codes}
+  \item{url}{url for artwork info}
 }
-
-Source: \url{http://colorlisa.com/}}
+}
 \usage{
 artwork
+}
+\value{
+a [tibble][tibble::tibble-package]
+
+Source: \url{http://colorlisa.com/}
 }
 \description{
 A dataset containing the name of the artist, palette, and artwork.

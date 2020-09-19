@@ -4,7 +4,9 @@
 \name{lisa}
 \alias{lisa}
 \title{List of all available palettes}
-\format{An object of class \code{list} of length 128.}
+\format{
+An object of class \code{list} of length 128.
+}
 \usage{
 lisa
 }
