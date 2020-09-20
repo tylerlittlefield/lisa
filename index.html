@@ -154,9 +154,9 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">library</span>(ggplot2)</span>
 <span id="cb7-2"><a href="#cb7-2"></a></span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(mpg, disp)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">col =</span> <span class="kw">factor</span>(gear)), <span class="dt">size =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">col =</span> <span class="kw">factor</span>(gear)), <span class="dt">size =</span> <span class="dv">5</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb7-5"><a href="#cb7-5"></a><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> lisa<span class="op">$</span><span class="st">`</span><span class="dt">Jean-MichelBasquiat</span><span class="st">`</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="st">  </span><span class="kw">theme_void</span>()</span></code></pre></div>
 <p><img src="reference/figures/README-ggplot2-example-1.png" width="100%"></p>
 </div>
 <div id="acknowledgements" class="section level2">
