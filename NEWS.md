@@ -1,3 +1,8 @@
+# lisa 0.1.2
+
+* New print method of palettes.
+* Updated `artwork` dataset to include colors and url information.
+
 # lisa 0.1.1
 
 * `lisa_palette` returns the "work" attribute.
