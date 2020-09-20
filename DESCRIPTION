@@ -5,7 +5,7 @@ Authors@R:
     person(given = "Tyler",
            family = "Littlefield",
            role = c("aut", "cre"),
-           email = "tylurp1@gmail.com",
+           email = "tylerlittlefield@hey.com",
            comment = c(ORCID = "0000-0002-6020-1125"))
 Description: Contains 128 palettes from Color Lisa. All palettes are based on 
     masterpieces from the worlds greatest artists. For more information, see 
