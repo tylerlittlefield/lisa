@@ -88,9 +88,9 @@ Example `ggplot2` usage:
     library(ggplot2)
 
     ggplot(mtcars, aes(mpg, disp)) + 
-      geom_point(aes(col = factor(gear)), size = 3) + 
+      geom_point(aes(col = factor(gear)), size = 5, show.legend = FALSE) + 
       scale_color_manual(values = lisa$`Jean-MichelBasquiat`) + 
-      theme_bw()
+      theme_void()
 
 <img src="man/figures/README-ggplot2-example-1.png" width="100%" />
 

@@ -7,22 +7,22 @@
 \format{
 A data frame with 128 rows and 3 variables:
 \describe{
-  \item{author}{name of artist}
-  \item{work}{name of artwork}
-  \item{palette}{name of the palette}
-  \item{colors}{hex color codes}
-  \item{url}{url for artwork info}
+\item{author}{name of artist}
+\item{work}{name of artwork}
+\item{palette}{name of the palette}
+\item{colors}{hex color codes}
+\item{url}{url for artwork info}
 }
 }
 \usage{
 artwork
 }
 \value{
-a [tibble][tibble::tibble-package]
+a \link[tibble:tibble-package]{tibble}
 
 Source: \url{http://colorlisa.com/}
 }
 \description{
-A dataset containing the name of the artist, palette, and artwork.
+A table containing various information about each palette.
 }
 \keyword{datasets}
